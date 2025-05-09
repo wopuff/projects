@@ -1,12 +1,12 @@
 [submodule "webbens-historia"]
 	path = webbens-historia
 	url = https://github.com/renestam/webbens-historia
-[submodule "framtidsstaden"]
-	path = framtidsstaden
-	url = https://github.com/renestam/framtidsstaden
 [submodule "memory-game"]
 	path = memory-game
 	url = https://github.com/renestam/memory-game
+[submodule "framtidsstaden"]
+	path = framtidsstaden
+	url = https://github.com/renestam/framtidsstaden
 [submodule "lagar-och-sakerhet"]
 	path = lagar-och-sakerhet
 	url = https://github.com/renestam/lagar-och-sakerhet

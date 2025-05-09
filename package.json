@@ -11,8 +11,10 @@
 
     "build:memory-game": "cd memory-game && npm run build && cd .. && xcopy memory-game\\dist\\* dist\\memory-game\\ /E /I /H /Y",
     "build:webbens-historia": "cd webbens-historia && npm run build && cd .. && xcopy webbens-historia\\dist\\* dist\\webbens-historia\\ /E /I /H /Y",
+    "build:framtidsstaden": "cd framtidsstaden && npm run build && cd .. && xcopy framtidsstaden\\dist\\* dist\\framtidsstaden\\ /E /I /H /Y",
+    "build:lagar-och-sakerhet": "cd lagar-och-sakerhet && npm run build && cd .. && xcopy lagar-och-sakerhet\\dist\\* dist\\lagar-och-sakerhet\\ /E /I /H /Y",
 
-    "build": "npm-run-all --silent clean build:copy:* build:memory-game build:webbens-historia"
+    "build": "npm-run-all --silent clean build:copy:* build:memory-game build:webbens-historia build:framtidsstaden build:lagar-och-sakerhet"
   },
   "devDependencies": {
     "copyfiles": "^2.4.1",
