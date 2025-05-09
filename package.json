@@ -1,0 +1,32 @@
+{
+  "name": "lurp-projects",
+  "version": "1.0.0",
+  "description": "Lurp Projects\r A collection of different projects, hosted both on the lurp.it domain and elsewhere.",
+  "main": "index.js",
+  "scripts": {
+    "clean": "if exist dist (rmdir /s /q dist) else mkdir dist",
+
+    "build:copy:html": "copyfiles *.html dist/",
+    "build:copy:styles": "copyfiles *.css dist/",
+
+    "build:memory-game": "cd memory-game && npm run build && cd .. && xcopy memory-game\\dist\\* dist\\memory-game\\ /E /I /H /Y",
+    "build:webbens-historia": "cd webbens-historia && npm run build && cd .. && xcopy webbens-historia\\dist\\* dist\\webbens-historia\\ /E /I /H /Y",
+
+    "build": "npm-run-all --silent clean build:copy:* build:memory-game build:webbens-historia"
+  },
+  "devDependencies": {
+    "copyfiles": "^2.4.1",
+    "npm-run-all": "^4.1.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lurpit/projects.git"
+  },
+  "keywords": [],
+  "author": "lurp",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lurpit/projects/issues"
+  },
+  "homepage": "https://github.com/lurpit/projects#readme"
+}
