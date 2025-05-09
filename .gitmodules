@@ -10,3 +10,6 @@
 [submodule "lagar-och-sakerhet"]
 	path = lagar-och-sakerhet
 	url = https://github.com/renestam/lagar-och-sakerhet
+[submodule "alexander"]
+	path = alexander
+	url = https://github.com/AleBjo/Webbutveckling
