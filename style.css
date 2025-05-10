@@ -11,7 +11,7 @@
 
 body {
   width: 100%;
-  height: 100vh;
+  min-height: 100dvh;
   background-color: #192333;
   display: flex;
   flex-direction: column;
@@ -31,12 +31,18 @@ body {
 .links a {
   text-decoration: none;
   background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   transition: 0.4s ease;
   border: 0.15rem solid transparent;
   border-radius: 0.5rem;
-  padding: 0.5rem 1rem;
+  padding: 0.1rem 1rem;
+  min-height: 3.3rem;
   font-size: 1.4rem;
   font-weight: 600;
+  word-break: break-word;
 }
 
 .legal {
@@ -46,6 +52,7 @@ body {
 
 .legal a {
   text-decoration: none;
+  text-align: center;
 }
 
 .legal a:hover {
