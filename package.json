@@ -19,10 +19,6 @@
     
     "build": "npm-run-all --silent clean build:copy:* build:memory-game build:webbens-historia build:framtidsstaden build:lagar-och-sakerhet build:alexander"
   },
-  "devDependencies": {
-    "copyfiles": "^2.4.1",
-    "npm-run-all": "^4.1.5"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/lurpit/projects.git"
@@ -33,5 +29,9 @@
   "bugs": {
     "url": "https://github.com/lurpit/projects/issues"
   },
-  "homepage": "https://github.com/lurpit/projects#readme"
+  "homepage": "https://github.com/lurpit/projects#readme",
+  "devDependencies": {
+    "copyfiles": "^2.4.1",
+    "npm-run-all": "^4.1.5"
+  }
 }
