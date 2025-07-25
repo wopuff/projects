@@ -4,7 +4,7 @@
   "description": "A collection of different projects, hosted on the Wopuff domain.",
   "main": "index.js",
   "scripts": {
-    "build:clean": "rimraf dist",
+    "build:clean": "rimraf dist && mkdir dist",
 
     "build:main:html": "copyfiles *.html dist/",
     "build:main:styles": "copyfiles *.css dist/",
