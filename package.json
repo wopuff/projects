@@ -1,35 +1,35 @@
 {
-  "name": "lurp-projects",
+  "name": "projects",
   "version": "1.0.0",
-  "description": "Lurp Projects\r A collection of different projects, hosted both on the lurp.it domain and elsewhere.",
+  "description": "A collection of different projects, hosted on the Wopuff domain.",
   "main": "index.js",
   "scripts": {
-    "clean": "if exist dist (rmdir /s /q dist) else mkdir dist",
+    "build:clean": "if exist dist (rmdir /s /q dist) else mkdir dist",
 
-    "build:copy:html": "copyfiles *.html dist/",
-    "build:copy:styles": "copyfiles *.css dist/",
-    "build:copy:assets": "copyfiles -u 1 assets/**/* dist/assets/",
-    "build:copy:sitemap": "copyfiles sitemap.xml dist/",
+    "build:main:html": "copyfiles *.html dist/",
+    "build:main:styles": "copyfiles *.css dist/",
+    "build:main:assets": "copyfiles -u 1 assets/**/* dist/assets/",
+    "build:main:sitemap": "copyfiles sitemap.xml dist/",
 
-    "build:memory-game": "cd memory-game && npm run build && cd .. && xcopy memory-game\\dist\\* dist\\memory-game\\ /E /I /H /Y",
-    "build:webbens-historia": "cd webbens-historia && npm run build && cd .. && xcopy webbens-historia\\dist\\* dist\\webbens-historia\\ /E /I /H /Y",
-    "build:framtidsstaden": "cd framtidsstaden && npm run build && cd .. && xcopy framtidsstaden\\dist\\* dist\\framtidsstaden\\ /E /I /H /Y",
-    "build:lagar-och-sakerhet": "cd lagar-och-sakerhet && npm run build && cd .. && xcopy lagar-och-sakerhet\\dist\\* dist\\lagar-och-sakerhet\\ /E /I /H /Y",
-    "build:alexander": "cd alexander && npm run build && cd .. && xcopy alexander\\dist\\* dist\\alexander\\ /E /I /H /Y",
-    
-    "build": "npm-run-all --silent clean build:copy:* build:memory-game build:webbens-historia build:framtidsstaden build:lagar-och-sakerhet build:alexander"
+    "build:project:memory-game": "cd memory-game && npm run build && cd .. && xcopy memory-game\\dist\\* dist\\memory-game\\ /E /I /H /Y",
+    "build:project:webbens-historia": "cd webbens-historia && npm run build && cd .. && xcopy webbens-historia\\dist\\* dist\\webbens-historia\\ /E /I /H /Y",
+    "build:project:framtidsstaden": "cd framtidsstaden && npm run build && cd .. && xcopy framtidsstaden\\dist\\* dist\\framtidsstaden\\ /E /I /H /Y",
+    "build:project:lagar-och-sakerhet": "cd lagar-och-sakerhet && npm run build && cd .. && xcopy lagar-och-sakerhet\\dist\\* dist\\lagar-och-sakerhet\\ /E /I /H /Y",
+    "build:project:alexander": "cd alexander && npm run build && cd .. && xcopy alexander\\dist\\* dist\\alexander\\ /E /I /H /Y",
+
+    "build": "npm-run-all --silent build:clean build:main:* build:project:*"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lurpit/projects.git"
+    "url": "git+https://github.com/wopuff/projects.git"
   },
   "keywords": [],
-  "author": "lurp",
+  "author": "wopuff",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/lurpit/projects/issues"
+    "url": "https://github.com/wopuff/projects/issues"
   },
-  "homepage": "https://github.com/lurpit/projects#readme",
+  "homepage": "https://projects.wopuff.com",
   "devDependencies": {
     "copyfiles": "^2.4.1",
     "npm-run-all": "^4.1.5"
