@@ -1,0 +1,87 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  color: white;
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+body {
+  width: 100%;
+  min-height: 100dvh;
+  background-color: #192333;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+  max-width: 45rem;
+}
+
+.links a {
+  text-decoration: none;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: 0.4s ease;
+  border: 0.15rem solid transparent;
+  border-radius: 0.5rem;
+  padding: 0.1rem 1rem;
+  min-height: 3.3rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  word-break: break-word;
+}
+
+.legal {
+  display: flex;
+  justify-content: center;
+}
+
+.legal a {
+  text-decoration: none;
+  text-align: center;
+}
+
+.legal a:hover {
+  color: #F46D00;
+}
+
+/* link colors */
+.links a:nth-child(5n) {
+  background-color: #800B9E;
+}
+
+.links a:nth-child(5n + 1) {
+  background-color: #F46D00;
+}
+
+.links a:nth-child(5n + 2) {
+  background-color: #0A55C5;
+}
+
+.links a:nth-child(5n + 3) {
+  background-color: #C10592;
+}
+
+.links a:nth-child(5n + 4) {
+  background-color: #278805;
+}
+
+
+.links a:hover {
+  background-color: #192333;
+  border: 0.15rem solid #F46D00;
+}
