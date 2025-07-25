@@ -4,7 +4,7 @@
   "description": "A collection of different projects, hosted on the Wopuff domain.",
   "main": "index.js",
   "scripts": {
-    "build:clean": "if exist dist (rmdir /s /q dist) else mkdir dist",
+    "build:clean": "rimraf dist",
 
     "build:main:html": "copyfiles *.html dist/",
     "build:main:styles": "copyfiles *.css dist/",
@@ -13,11 +13,11 @@
 
     "build:modules": "git submodule update --init --recursive",
 
-    "build:project:memory-game": "cd memory-game && npm run build && cd .. && xcopy memory-game\\dist\\* dist\\memory-game\\ /E /I /H /Y",
-    "build:project:webbens-historia": "cd webbens-historia && npm run build && cd .. && xcopy webbens-historia\\dist\\* dist\\webbens-historia\\ /E /I /H /Y",
-    "build:project:framtidsstaden": "cd framtidsstaden && npm run build && cd .. && xcopy framtidsstaden\\dist\\* dist\\framtidsstaden\\ /E /I /H /Y",
-    "build:project:lagar-och-sakerhet": "cd lagar-och-sakerhet && npm run build && cd .. && xcopy lagar-och-sakerhet\\dist\\* dist\\lagar-och-sakerhet\\ /E /I /H /Y",
-    "build:project:alexander": "cd alexander && npm run build && cd .. && xcopy alexander\\dist\\* dist\\alexander\\ /E /I /H /Y",
+    "build:project:memory-game": "cd memory-game && npm run build && npx cpy \"dist/**\" ../dist/memory-game --cwd=memory-game",
+    "build:project:webbens-historia": "cd webbens-historia && npm run build && npx cpy \"dist/**\" ../dist/webbens-historia --cwd=webbens-historia",
+    "build:project:framtidsstaden": "cd framtidsstaden && npm run build && npx cpy \"dist/**\" ../dist/framtidsstaden --cwd=framtidsstaden",
+    "build:project:lagar-och-sakerhet": "cd lagar-och-sakerhet && npm run build && npx cpy \"dist/**\" ../dist/lagar-och-sakerhet --cwd=lagar-och-sakerhet",
+    "build:project:alexander": "cd alexander && npm run build && npx cpy \"dist/**\" ../dist/alexander --cwd=alexander",
 
     "build": "npm-run-all --silent build:clean build:main:* build:modules build:project:*"
   },
@@ -34,6 +34,8 @@
   "homepage": "https://projects.wopuff.com",
   "devDependencies": {
     "copyfiles": "^2.4.1",
+    "cpy": "^9.0.1",
+    "rimraf": "^6.0.1",
     "npm-run-all": "^4.1.5"
   }
 }
