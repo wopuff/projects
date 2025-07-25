@@ -11,13 +11,15 @@
     "build:main:assets": "copyfiles -u 1 assets/**/* dist/assets/",
     "build:main:sitemap": "copyfiles sitemap.xml dist/",
 
+    "build:modules": "git submodule update --init --recursive",
+
     "build:project:memory-game": "cd memory-game && npm run build && cd .. && xcopy memory-game\\dist\\* dist\\memory-game\\ /E /I /H /Y",
     "build:project:webbens-historia": "cd webbens-historia && npm run build && cd .. && xcopy webbens-historia\\dist\\* dist\\webbens-historia\\ /E /I /H /Y",
     "build:project:framtidsstaden": "cd framtidsstaden && npm run build && cd .. && xcopy framtidsstaden\\dist\\* dist\\framtidsstaden\\ /E /I /H /Y",
     "build:project:lagar-och-sakerhet": "cd lagar-och-sakerhet && npm run build && cd .. && xcopy lagar-och-sakerhet\\dist\\* dist\\lagar-och-sakerhet\\ /E /I /H /Y",
     "build:project:alexander": "cd alexander && npm run build && cd .. && xcopy alexander\\dist\\* dist\\alexander\\ /E /I /H /Y",
 
-    "build": "npm-run-all --silent build:clean build:main:* build:project:*"
+    "build": "npm-run-all --silent build:clean build:main:* build:modules build:project:*"
   },
   "repository": {
     "type": "git",
