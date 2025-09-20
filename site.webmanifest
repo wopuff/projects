@@ -1,0 +1,26 @@
+{
+  "name": "Wopuff Projects",
+  "short_name": "Wopuff Projects",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#192333",
+  "theme_color": "#192333",
+  "description": "Wopuff Projects features a collection of different projects hosted on the Wopuff domain.",
+  "icons": [
+    {
+      "src": "https://wopuff.com/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://wopuff.com/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "https://wopuff.com/icons/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}
