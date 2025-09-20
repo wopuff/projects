@@ -19,7 +19,9 @@
     "build:project:lagar-och-sakerhet": "cd lagar-och-sakerhet && npm run build && cd .. && xcopy lagar-och-sakerhet\\dist\\* dist\\lagar-och-sakerhet\\ /E /I /H /Y",
     "build:project:alexander": "cd alexander && npm run build && cd .. && xcopy alexander\\dist\\* dist\\alexander\\ /E /I /H /Y",
 
-    "build": "npm-run-all --silent build:clean build:main:* build:project:*"
+    "build": "npm-run-all --silent build:clean build:main:* build:project:*",
+
+    "deploy": "wrangler deploy"
   },
   "repository": {
     "type": "git",
