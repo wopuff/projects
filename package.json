@@ -4,23 +4,16 @@
   "description": "A collection of different projects, hosted on the Wopuff domain.",
   "main": "index.js",
   "scripts": {
-    "build:clean": "if exist dist (rmdir /s /q dist) else mkdir dist",
-
-    "build:main:html": "copyfiles *.html dist/",
-    "build:main:styles": "copyfiles *.css dist/",
+    "build:clean": "rimraf dist && mkdir dist",
+    "build:main:source": "copyfiles -u 1 src/**/* dist/",
     "build:main:assets": "copyfiles -u 1 assets/**/* dist/assets/",
-    "build:main:sitemap": "copyfiles sitemap.xml dist/",
-
     "build:modules": "git submodule update --init --recursive",
-
-    "build:project:memory-game": "cd memory-game && npm run build && cd .. && xcopy memory-game\\dist\\* dist\\memory-game\\ /E /I /H /Y",
-    "build:project:webbens-historia": "cd webbens-historia && npm run build && cd .. && xcopy webbens-historia\\dist\\* dist\\webbens-historia\\ /E /I /H /Y",
-    "build:project:framtidsstaden": "cd framtidsstaden && npm run build && cd .. && xcopy framtidsstaden\\dist\\* dist\\framtidsstaden\\ /E /I /H /Y",
-    "build:project:lagar-och-sakerhet": "cd lagar-och-sakerhet && npm run build && cd .. && xcopy lagar-och-sakerhet\\dist\\* dist\\lagar-och-sakerhet\\ /E /I /H /Y",
-    "build:project:alexander": "cd alexander && npm run build && cd .. && xcopy alexander\\dist\\* dist\\alexander\\ /E /I /H /Y",
-
-    "build": "npm-run-all --silent build:clean build:main:* build:project:*",
-
+    "build:project:memory-game": "npm --prefix memory-game run build && copyfiles -u 2 memory-game/dist/**/* dist/memory-game/",
+    "build:project:webbens-historia": "npm --prefix webbens-historia run build && copyfiles -u 2 webbens-historia/dist/**/* dist/webbens-historia/",
+    "build:project:framtidsstaden": "npm --prefix framtidsstaden run build && copyfiles -u 2 framtidsstaden/dist/**/* dist/framtidsstaden/",
+    "build:project:lagar-och-sakerhet": "npm --prefix lagar-och-sakerhet run build && copyfiles -u 2 lagar-och-sakerhet/dist/**/* dist/lagar-och-sakerhet/",
+    "build:project:alexander": "npm --prefix alexander run build && copyfiles -u 2 alexander/dist/**/* dist/alexander/",
+    "build": "npm-run-all --silent build:clean build:main:* build:modules build:project:*",
     "deploy": "wrangler deploy"
   },
   "repository": {
@@ -36,6 +29,7 @@
   "homepage": "https://projects.wopuff.com",
   "devDependencies": {
     "copyfiles": "^2.4.1",
-    "npm-run-all": "^4.1.5"
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^6.1.2"
   }
 }
